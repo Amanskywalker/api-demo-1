@@ -41,7 +41,34 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: CURL command
-        run: curl https://dry-lake-63632.herokuapp.com/api/branches/autocomplete?q=RTGS&limit=3&offset=0
+        run: curl -X GET "https://dry-lake-63632.herokuapp.com/api/branches/autocomplete?q=RTGS"
 
       - name: CURL command
-        run: curl https://dry-lake-63632.herokuapp.com/api/branches?q=Bangalore&limit=4&offset=0
+        run: curl -X GET "https://dry-lake-63632.herokuapp.com/api/branches/autocomplete?q=RTGS&limit=100"
+
+      - name: CURL command
+        run: curl -X GET "https://dry-lake-63632.herokuapp.com/api/branches/autocomplete?q=RTGS&limit=10&offset=152"
+
+      - name: CURL command
+        run: curl -X GET "https://dry-lake-63632.herokuapp.com/api/branches/autocomplete?limit=123&offset=281"
+
+      - name: CURL command
+        run: curl -X GET "https://dry-lake-63632.herokuapp.com/api/branches/autocomplete?q=Bangalore"
+
+      - name: CURL command
+        run: curl -X GET "https://dry-lake-63632.herokuapp.com/api/branches/autocomplete?q=Bangalore&limit=3&offset=1236"
+
+      - name: CURL command
+        run: curl -X GET "https://dry-lake-63632.herokuapp.com/api/branches?q=Bangalore"
+
+      - name: CURL command
+        run: curl -X GET "https://dry-lake-63632.herokuapp.com/api/branches?q=Bangalore&limit=4"
+
+      - name: CURL command
+        run: curl -X GET "https://dry-lake-63632.herokuapp.com/api/branches?q=Bangalore&limit=4&offset=0"
+
+      - name: CURL command
+        run: curl -X GET "https://dry-lake-63632.herokuapp.com/api/branches?q=Delhi&limit=121&offset=172"
+
+      - name: CURL command
+        run: curl -X GET "https://dry-lake-63632.herokuapp.com/api/branches?limit=114&offset=7868"
