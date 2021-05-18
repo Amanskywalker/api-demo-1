@@ -35,40 +35,42 @@ jobs:
           heroku_email: ${{ secrets.HEROKU_EMAIL }}
 
   test:
+    # test should run after the build is done
+    needs: build
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: CURL command
-        run: curl -X GET "https://dry-lake-63632.herokuapp.com/api/branches/autocomplete?q=RTGS"
+        run: curl -X GET "https://${{ secrets.HEROKU_APP_NAME }}.herokuapp.com/api/branches/autocomplete?q=RTGS"
 
       - name: CURL command
-        run: curl -X GET "https://dry-lake-63632.herokuapp.com/api/branches/autocomplete?q=RTGS&limit=100"
+        run: curl -X GET "https://${{ secrets.HEROKU_APP_NAME }}.herokuapp.com/api/branches/autocomplete?q=RTGS&limit=100"
 
       - name: CURL command
-        run: curl -X GET "https://dry-lake-63632.herokuapp.com/api/branches/autocomplete?q=RTGS&limit=10&offset=152"
+        run: curl -X GET "https://${{ secrets.HEROKU_APP_NAME }}.herokuapp.com/api/branches/autocomplete?q=RTGS&limit=10&offset=152"
 
       - name: CURL command
-        run: curl -X GET "https://dry-lake-63632.herokuapp.com/api/branches/autocomplete?limit=123&offset=281"
+        run: curl -X GET "https://${{ secrets.HEROKU_APP_NAME }}.herokuapp.com/api/branches/autocomplete?limit=123&offset=281"
 
       - name: CURL command
-        run: curl -X GET "https://dry-lake-63632.herokuapp.com/api/branches/autocomplete?q=Bangalore"
+        run: curl -X GET "https://${{ secrets.HEROKU_APP_NAME }}.herokuapp.com/api/branches/autocomplete?q=Bangalore"
 
       - name: CURL command
-        run: curl -X GET "https://dry-lake-63632.herokuapp.com/api/branches/autocomplete?q=Bangalore&limit=3&offset=1236"
+        run: curl -X GET "https://${{ secrets.HEROKU_APP_NAME }}.herokuapp.com/api/branches/autocomplete?q=Bangalore&limit=3&offset=1236"
 
       - name: CURL command
-        run: curl -X GET "https://dry-lake-63632.herokuapp.com/api/branches?q=Bangalore"
+        run: curl -X GET "https://${{ secrets.HEROKU_APP_NAME }}.herokuapp.com/api/branches?q=Bangalore"
 
       - name: CURL command
-        run: curl -X GET "https://dry-lake-63632.herokuapp.com/api/branches?q=Bangalore&limit=4"
+        run: curl -X GET "https://${{ secrets.HEROKU_APP_NAME }}.herokuapp.com/api/branches?q=Bangalore&limit=4"
 
       - name: CURL command
-        run: curl -X GET "https://dry-lake-63632.herokuapp.com/api/branches?q=Bangalore&limit=4&offset=0"
+        run: curl -X GET "https://${{ secrets.HEROKU_APP_NAME }}.herokuapp.com/api/branches?q=Bangalore&limit=4&offset=0"
 
       - name: CURL command
-        run: curl -X GET "https://dry-lake-63632.herokuapp.com/api/branches?q=Delhi&limit=121&offset=172"
+        run: curl -X GET "https://${{ secrets.HEROKU_APP_NAME }}.herokuapp.com/api/branches?q=Delhi&limit=121&offset=172"
 
       - name: CURL command
-        run: curl -X GET "https://dry-lake-63632.herokuapp.com/api/branches?limit=114&offset=7868"
+        run: curl -X GET "https://${{ secrets.HEROKU_APP_NAME }}.herokuapp.com/api/branches?limit=114&offset=7868"
