@@ -2,7 +2,7 @@
 
 name: CI
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
@@ -33,3 +33,15 @@ jobs:
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
           heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
           heroku_email: ${{ secrets.HEROKU_EMAIL }}
+
+  test:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: CURL command
+        uses: curl https://dry-lake-63632.herokuapp.com/api/branches/autocomplete?limit=4&offset=11&q=RTGS
+
+      - name: CURL command
+        uses: curl https://dry-lake-63632.herokuapp.com/api/branches?offset=200&limit=10&q=bangalore
