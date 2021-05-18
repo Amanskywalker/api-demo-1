@@ -12,7 +12,7 @@ class Bank(models.Model):
 
 class Branch(models.Model):
     ifsc = models.CharField(max_length=11, primary_key=True)
-    bank_id = models.BigIntegerField(null=True)
+    bank = models.ForeignKey(Bank, on_delete=models.PROTECT, null=True)
     branch = models.CharField(max_length=74, null=True)
     address = models.CharField(max_length=195, null=True)
     city = models.CharField(max_length=50, null=True)
