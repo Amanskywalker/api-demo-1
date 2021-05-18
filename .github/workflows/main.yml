@@ -44,4 +44,4 @@ jobs:
         run: curl https://dry-lake-63632.herokuapp.com/api/branches/autocomplete?limit=4&offset=11&q=RTGS
 
       - name: CURL command
-        run: curl https://dry-lake-63632.herokuapp.com/api/branches?offset=200&limit=10&q=bangalore
+        run: https://dry-lake-63632.herokuapp.com/api/branches?q=bangalore&offset=20&limit=10

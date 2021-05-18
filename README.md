@@ -15,5 +15,5 @@ curl https://dry-lake-63632.herokuapp.com/api/branches/autocomplete?limit=4&offs
 
 Search API to return possible matches across all columns and all rows, ordered by IFSC code (ascending order) with limit and offset.
 ```
-curl https://dry-lake-63632.herokuapp.com/api/branches?offset=200&limit=10&q=bangalore
+curl https://dry-lake-63632.herokuapp.com/api/branches?q=bangalore&offset=20&limit=10
 ```
