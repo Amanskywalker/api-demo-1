@@ -41,7 +41,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: CURL command
-        run: curl https://dry-lake-63632.herokuapp.com/api/branches/autocomplete?limit=4&offset=11&q=RTGS
+        run: curl https://dry-lake-63632.herokuapp.com/api/branches/autocomplete?q=RTGS&limit=3&offset=0
 
       - name: CURL command
-        run: https://dry-lake-63632.herokuapp.com/api/branches?q=bangalore&offset=20&limit=10
+        run: curl https://dry-lake-63632.herokuapp.com/api/branches?q=Bangalore&limit=4&offset=0
