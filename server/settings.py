@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'restapi',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -75,9 +77,13 @@ WSGI_APPLICATION = 'server.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'b3hxa7fxjdqmoqmqtlec',
+        'USER': 'unxe3swozw1sye7vt9tv',
+        'PASSWORD': 'THUDEGTaG93xcEB5P8DD',
+        'HOST': 'b3hxa7fxjdqmoqmqtlec-postgresql.services.clever-cloud.com',
+        'PORT': '5432',
+    },
 }
 
 
